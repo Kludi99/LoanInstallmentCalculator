@@ -1,0 +1,9 @@
+﻿# Ignoruj środowisko virtualne
+venv/
+
+# Pliki PyCharm
+.idea/
+
+# Pliki cache Pythona
+__pycache__/
+*.pyc
