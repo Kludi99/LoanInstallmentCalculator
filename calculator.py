@@ -45,7 +45,9 @@ def quota_formatter(quota, currency='PLN'):
         return 'Error: Can\'t convert quota to decimal'
 
 def show_schedule(quota, interest, number_of_installments, installment):
-    left = Decimal(quota)
+
+    real_quota = installment * number_of_installments
+    left = Decimal(real_quota)
     print('Payment schedule:')
     print(f"{'interest number':>6} {'Installment':>15} {'Left':>15}")
     print("-"*38)

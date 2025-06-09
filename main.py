@@ -3,13 +3,18 @@ from decimal import Decimal
 
 def main():
     try:
-        quota = Decimal('100000')
-        interest = Decimal('3.5')
-        number_of_installments = Decimal('12')
+        input_quota = float(input("Enter quota: "))
+        input_interest = float(input("Enter interest: "))
+        input_number_of_installments = int(input("Enter number of installments: "))
+
+        quota = Decimal(input_quota)
+        interest = Decimal(input_interest)
+        number_of_installments = Decimal(input_number_of_installments)
 
         installment = calculate_installment(quota, interest, number_of_installments)
 
         print(f'Loan quota: {quota_formatter(quota)}')
+        print(f'Real loan quota: {quota_formatter(number_of_installments * installment)}')
         print(f'Monthly installment quota: {quota_formatter(installment)}')
         show_schedule(quota, interest, number_of_installments, installment)
 
